@@ -13,4 +13,10 @@ router.get('/users', function(req, res, next) {
   });
 });
 
+router.get('/posts', function(req, res, next) {
+  mongoose.model('posts').find(function (err, posts) {
+    res.send(posts);
+  });
+});
+
 module.exports = router;
